@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Zelený pruh nahoře jako kampaňový akcent -->
+  <rect x="0" y="0" width="1200" height="14" fill="#0bd26f"/>
+
+  <!-- Motiv klíče z favicony, světle zeleně, jako podkladová grafika vpravo -->
+  <g transform="translate(910, 120) scale(5.4)" fill="#d3f5e3">
+    <path d="M32 8c-7.7 0-14 6.3-14 14 0 6.3 4.2 11.6 10 13.4V56h8V35.4c5.8-1.8 10-7.1 10-13.4 0-7.7-6.3-14-14-14zm0 8.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"/>
+    <rect x="36" y="38" width="11" height="6.5" rx="1.5"/>
+    <rect x="36" y="48" width="8" height="6" rx="1.5"/>
+  </g>
+
+  <text x="80" y="130" font-family="Tusker Grotesk" font-size="72" fill="#104F2D">BRNO MÁ</text>
+
+  <!-- Číslo na růžové ploše -->
+  <rect x="80" y="158" width="272" height="112" fill="#ffa6d1"/>
+  <text x="100" y="252" font-family="Tusker Grotesk" font-size="112" fill="#104F2D">1 592</text>
+
+  <text x="80" y="336" font-family="Urban Grotesk Black" font-size="40" fill="#022815">PRÁZDNÝCH MĚSTSKÝCH BYTŮ.</text>
+
+  <text x="80" y="460" font-family="Tusker Grotesk" font-size="104" fill="#104F2D">PROČ?</text>
+
+  <text x="80" y="556" font-family="Urban Grotesk Black" font-size="32" fill="#022815">DOZVÍTE SE NA <tspan fill="#0bd26f">PRAZDNEBYTYBRNO.CZ</tspan></text>
+</svg>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Otevíráme prázdné byty v Brně</title>
+<meta name="description" content="V Brně stojí 1 592 prázdných městských bytů, ve kterých nikdo nebydlí. Zjistěte proč – a jak požádat o městský byt.">
+<link rel="canonical" href="https://www.prazdnebytybrno.cz/">
+<meta name="theme-color" content="#0bd26f">
+
+<!-- Open Graph / náhled při sdílení (WhatsApp, Messenger…) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Zelené Brno">
+<meta property="og:url" content="https://www.prazdnebytybrno.cz/">
+<meta property="og:title" content="Otevíráme prázdné byty v Brně">
+<meta property="og:description" content="V Brně stojí 1 592 prázdných městských bytů, ve kterých nikdo nebydlí. Zjistěte proč – a jak požádat o městský byt.">
+<meta property="og:image" content="https://www.prazdnebytybrno.cz/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brno má 1 592 prázdných městských bytů. Proč? Dozvíte se na prazdnebytybrno.cz">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon: motiv klíče, viz zadání sekce 6 -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="preload" href="fonts/TuskerGrotesk-5700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=2">
+
+<script>
+/* Výběr varianty podle utm_source. Musí běžet synchronně v <head>, ještě než
+   se vykreslí <body>, jinak by na zlomek sekundy problikla výchozí varianta
+   všem (viz zadání sekce 6, "Pravidla výběru varianty"). */
+(function () {
+  var ALLOWED = ["klic", "plakat", "mhd", "letak", "ig", "fb", "manychat", "share"];
+  var value = "default";
+  try {
+    var raw = new URLSearchParams(window.location.search).get("utm_source") || "";
+    var normalized = raw.toLowerCase().trim();
+    if (ALLOWED.indexOf(normalized) !== -1) {
+      value = normalized;
+    }
+  } catch (e) {
+    /* poškozený query string apod. -> zůstává default */
+  }
+  document.documentElement.classList.add("variant-" + value);
+  window.__pbb = { variant: value };
+})();
+</script>
+</head>
+<body>
+<noscript>
+  <div class="wrap" style="padding-top:2rem">
+    <h1>Otevíráme prázdné byty v Brně!</h1>
+    <p>V Brně stojí 1 592 městských bytů prázdných. Nikdo v nich nebydlí, u stovek z nich přitom stačí běžná oprava. Zatímco náklady na bydlení rostou, město nechává vlastní byty chátrat.</p>
+    <p>Tahle stránka potřebuje pro odeslání e-mailu a zobrazení obsahu zapnutý JavaScript.</p>
+  </div>
+</noscript>
+
+<main class="wrap">
+
+  <!-- ===== HERO — varianty hlavy ===== -->
+  <section class="hero">
+
+    <!-- Default, MHD i leták sdílejí jednu hlavu — liší se jen v měření zdroje. -->
+    <div data-variant-block="default">
+      <h1>Otevíráme prázdné byty v Brně!</h1>
+      <p>V Brně stojí <span class="num-highlight">1&nbsp;592</span> městských bytů prázdných. Nikdo v nich nebydlí, u stovek z nich přitom stačí běžná oprava. Zatímco náklady na bydlení rostou, město nechává vlastní byty chátrat.</p>
+      <p>Jsme Zelené Brno a chceme to změnit. Než se to podaří, pomůžeme vám uspět i v systému, jaký je dnes: sepsali jsme příručku ze zkušeností z bytové komise. Jak o byt požádat, čemu se vyhnout a co vaši šanci na byt reálně zvýší.</p>
+      <p class="signpost">Proč město ty byty nechává prázdné a co s tím chceme udělat, se dočtete hned pod formulářem.</p>
+    </div>
+
+    <div data-variant-block="plakat">
+      <h1>Otevíráme prázdné byty v Brně!</h1>
+      <p>Proč město nechává <span class="num-highlight">1&nbsp;592</span> svých bytů prázdných, zatímco náklady na bydlení v Brně raketově rostou?</p>
+    </div>
+
+    <div data-variant-block="klic">
+      <h1>Otevíráme prázdné byty v Brně!</h1>
+      <p>Právě jste našli symbolický klíč od městského bytu, ve kterém nikdo nebydlí. Možná roky. A zdaleka není jediný.</p>
+
+      <p><strong>Tipněte si: kolik prázdných městských bytů je v Brně?</strong></p>
+      <div class="quiz-buttons" id="quiz-buttons">
+        <button type="button" data-guess="do-500">do 500</button>
+        <button type="button" data-guess="kolem-1000">kolem 1 000</button>
+        <button type="button" data-guess="pres-1500">přes 1 500</button>
+      </div>
+
+      <div class="quiz-answer" id="quiz-answer">
+        <p>Je jich <span class="num-highlight">1&nbsp;592</span>. Tolik bytů ve vlastnictví města stojí prázdných, zatímco tisíce lidí v Brně shánějí bydlení za rozumnou cenu.</p>
+        <p class="brand-reveal">Jsme Zelené Brno a tenhle problém nás štve stejně jako vás.</p>
+        <p>Mimochodem, klíč, který jste našli, funguje jako žeton do vozíků v supermarketech. Nechte si ho jako praktický dárek.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== Formulář nahoře (jen default/mhd/letak/ig/fb/manychat/share) ===== -->
+  <div data-form-top>
+    <div class="form-block" data-form-instance="top" id="form-top"></div>
+  </div>
+
+  <!-- ===== Společná sekce ===== -->
+  <section class="section">
+    <h2>Proč jsou ty byty prázdné?</h2>
+    <p>Protože opravy nejsou pro současné vedení města prioritou. Podívejte se na tvrdá data přímo z magistrátu.</p>
+    <p>575 bytů stačí jen běžně opravit. U 420 z nich by oprava stála do 400 tisíc korun, u 155 dokonce do 100 tisíc korun. Pro Brno, které hospodaří s miliardami, jsou to drobné. Přesto v nich nikdo nebydlí.</p>
+    <p>387 bytů je v domech, které město nechalo dojít do stavu před demolicí nebo k celkové rekonstrukci. Desítky let zanedbávané údržby teď nesou své ovoce.</p>
+    <p>Ano, část z celkového počtu má legitimní důvody, proč nejsou obsazené. Slouží jako krizové nebo náhradní bydlení, řeší se u nich dědictví, nebo se zrovna obsazují. Ale i tak stovky snadno opravitelných bytů jen chátrají.</p>
+
+    <h2>A staví město aspoň nové byty?</h2>
+    <p>Sotva. Loni dokončilo jeden. Předloni taky jeden. A reálně je nyní rozestavěných jen 158.</p>
+    <p>Opravy ani výstavba bytů nejsou pro tuhle radnici priorita.</p>
+
+    <h2>Co se s tím dá dělat?</h2>
+    <p>Změnit to můžete ve volbách 9. a 10. října: dejte hlas koalici Zelené Brno.</p>
+    <p>Naše řešení: Nejrychlejší byt je ten, který už stojí. Nová výstavba je nutná a plně ji podporujeme. Jenže postavit bytový dům trvá roky. Lidé v Brně ale potřebují bydlet hned teď. Proto přicházíme s logickým prvním krokem: Opravme nejdříve to, co už Brno vlastní.</p>
+
+    <h2>Má vůbec smysl o městský byt žádat?</h2>
+    <p>Možná si říkáte, že v tomto systému nemá vůbec smysl o městský byt žádat. Ale má. Město byty, byť pomalu, přiděluje, právě teď jich obsazuje přes 250. Většina lidí ale pohoří na složité byrokracii a neví, jak správně postupovat. Proto jsme připravili tu příručku.</p>
+  </section>
+
+  <!-- ===== Kdo za tím stojí ===== -->
+  <section class="section">
+    <h2>Kdo za tím stojí</h2>
+    <figure class="author-card">
+      <img class="author-photo" src="images/kristyna-fuchsova.jpg" width="916" height="915" alt="JUDr. Kristýna Fuchsová">
+      <div class="author-body">
+        <figcaption class="author-caption">
+          <cite class="author-name">JUDr. Kristýna Fuchsová</cite>
+          <span class="author-role">právnička v sociálních službách, zastupitelka Brna-střed</span>
+          <span class="author-candidate">kandidátka č.&nbsp;3 za koalici Zelené Brno v&nbsp;komunálních volbách</span>
+        </figcaption>
+        <blockquote class="author-quote">
+          <p>Šest let sedím v bytové komisi, takže vím, jak město s obecními byty nakládá i jak se o ně žádá. A vím taky, že spousta lidí to vzdá dřív, než žádost vůbec podá. Prázdné byty musíme nejdřív opravit, aby bylo co pronajímat. Než se to povede, aspoň poradím, jak se v tom systému vyznat.</p>
+        </blockquote>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ===== Formulář dole (vždy) ===== -->
+  <div class="form-block" data-form-instance="bottom" id="form-bottom"></div>
+
+  <!-- ===== Patička ===== -->
+  <footer class="refrain-bar">
+    <p class="footer-links">
+      Více o nás na <a href="https://zelenebrno.cz/">www.zelenebrno.cz</a>
+    </p>
+
+    <div class="refrain" role="img" aria-label="Protože Brno má na víc">
+      <span class="refrain-line">PROTOŽE BRNO</span>
+      <span class="refrain-line"><span class="refrain-word">MÁ</span><span class="plate plate--green">NA</span><span class="plate plate--pink">VÍC</span></span>
+    </div>
+    <!-- TODO: nahradit finální vektorovou grafikou refrénu od grafika (v křivkách), viz zadání sekce 5.
+         Zatím je refrén sázen živým textem ve stejném fontu jako vizuální náhrada. -->
+
+    <p class="legal-text">
+      Toto je politické reklamní sdělení pro volby do zastupitelstev měst a obcí 2026. Zadavatel/zpracovatel: koalice Zelené Brno. Více informací: <a href="https://zelenebrno.cz/reklama/">zelenebrno.cz/reklama</a>. Osobní údaje zpracováváme podle <a href="https://zeleni.cz/soukromi">zásad zpracování osobních údajů</a>.
+    </p>
+  </footer>
+
+</main>
+
+<!-- Šablona formuláře: shared komponenta, klonuje se do #form-top a #form-bottom, viz js/script.js -->
+<template id="form-template">
+  <div class="form-body">
+    <p>Zadejte e-mail a pošleme vám:</p>
+    <ul>
+      <li>přehled, kolik městských bytů je volných v jednotlivých městských částech,</li>
+      <li>návod, jak o městský byt požádat a neudělat při tom chybu,</li>
+      <li>a tipy, co naopak nedělat, abyste si neuškodili.</li>
+    </ul>
+    <form novalidate>
+      <div class="hp-field" aria-hidden="true">
+        <label>Nevyplňujte, pokud jste člověk
+          <input type="text" name="website" data-field="website" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>E-mail
+          <input type="email" name="email" data-field="email" required autocomplete="email" placeholder="vas@email.cz">
+        </label>
+        <div class="field-error" data-role="email-error">Zadejte prosím platný e-mail.</div>
+      </div>
+
+      <label class="consent-row">
+        <input type="checkbox" name="consent" data-field="consent">
+        <span class="consent-text">Souhlasím se zpracováním osobních údajů pro účely zasílání informací o bydlení v Brně a volebním programu Zeleného Brna. Souhlas lze kdykoli odvolat na <a href="mailto:soukromi@zeleni.cz">soukromi@zeleni.cz</a>. Osobní údaje zpracováváme podle zásad na <a href="https://zeleni.cz/soukromi">zeleni.cz/soukromi</a>.</span>
+      </label>
+      <div class="field-error" data-role="consent-error">Pro odeslání je potřeba zaškrtnout souhlas se zpracováním osobních údajů.</div>
+
+      <div class="form-message" data-role="form-message">Nepodařilo se to uložit, zkuste to prosím znovu.</div>
+      <button type="submit" class="btn-submit" data-role="submit">Poslat mi přehled a návod</button>
+    </form>
+  </div>
+
+  <div class="form-confirmation" data-role="confirmation-top">
+    <p>Hotovo, návod máte ve schránce. Než ho otevřete: proč vlastně v Brně stojí 1&nbsp;592 bytů prázdných, se dočtete hned pod tímhle odstavcem.</p>
+  </div>
+
+  <div class="form-confirmation" data-role="confirmation-bottom">
+    <p>Hotovo, návod máte ve schránce. Pošlete tuhle stránku někomu, kdo v Brně řeší bydlení.</p>
+    <div class="share-buttons" data-role="share-buttons">
+      <button type="button" data-share="primary">Sdílet</button>
+    </div>
+  </div>
+</template>
+
+<script src="js/script.js" defer></script>
+<!-- Umami Cloud, bezplatný tarif — bez cookies, viz zadání sekce 7 "Měření návštěvnosti".
+     TODO: nahradit data-website-id po založení účtu. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="REPLACE_WITH_UMAMI_WEBSITE_ID"></script>
+</body>
+</html>
