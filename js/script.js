@@ -90,6 +90,17 @@
     });
   }
 
+  // Potvrzení je nižší než formulář, takže se obsah pod ním vytáhne nahoru
+  // a čtenář zůstane koukat úplně jinde. Posuneme ho zpátky na blok, který
+  // odeslal, ať potvrzení vůbec uvidí.
+  function ukazPotvrzeni(instance) {
+    var plynule = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    instance.root.scrollIntoView({
+      behavior: plynule ? "smooth" : "auto",
+      block: "center",
+    });
+  }
+
   function handleSubmit(instance) {
     if (formState.submitting || formState.submitted) return;
 
@@ -104,10 +115,10 @@
 
     if (!validateEmail(instance)) return;
 
-    submitToActionNetwork(instance.emailInput.value.trim());
+    submitToActionNetwork(instance.emailInput.value.trim(), instance);
   }
 
-  function submitToActionNetwork(email) {
+  function submitToActionNetwork(email, odesilajici) {
     formState.submitting = true;
     setPendingUI(true);
     instances.forEach(function (i) {
@@ -140,6 +151,7 @@
         formState.submitting = false;
         formState.submitted = true;
         showConfirmedUI();
+        ukazPotvrzeni(odesilajici);
         if (window.umami) {
           window.umami.track("lead_submitted", { source: variant });
         }
