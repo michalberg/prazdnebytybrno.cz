@@ -369,16 +369,7 @@ html:not([class*="variant-"]) [data-form-top] {
 }
 
 .form-block > .form-body > p:first-child {
-  margin-bottom: 0.5rem;
-}
-
-.form-block ul {
-  margin: 0 0 1.25rem;
-  padding-left: 1.25rem;
-}
-
-.form-block li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 1.25rem;
 }
 
 .form-row {
