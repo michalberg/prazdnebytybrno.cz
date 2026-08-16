@@ -135,13 +135,18 @@ p {
   font-size: 1.125rem;
 }
 
-/* Rozcestník: dopředu ohlásí, že argumentace pokračuje pod formulářem,
-   aby čtenář nenarazil na formulář jako na konec stránky. */
+/* Rozcestník: ohlásí dopředu, co čtenáře čeká dál. U variant s formulářem
+   nahoře upozorní, že argumentace pokračuje pod ním; u plakátu a klíče
+   naopak upoutá na příručku na konci stránky, kam by jinak nikdo nedošel. */
 .hero p.signpost {
   font-size: 1rem;
   color: var(--color-headline);
   font-weight: 600;
   margin-bottom: 0;
+}
+
+.hero p.signpost a {
+  color: var(--color-headline);
 }
 
 /* Skrýt varianty hlavy dokud JS nerozhodne, aby nedošlo k probliknutí špatné varianty */
