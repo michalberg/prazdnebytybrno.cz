@@ -526,6 +526,11 @@ html:not([class*="variant-"]) [data-form-top] {
   display: block;
 }
 
+/* Blok, který člověk neodeslal — potvrzení "Hotovo" už četl u toho druhého */
+.form-block.is-druhotne [data-role="hotovo"] {
+  display: none;
+}
+
 /* --- Sdílení (jen dolní potvrzení) --- */
 
 .share-buttons {

@@ -202,7 +202,10 @@
   </div>
 
   <div class="form-confirmation" data-role="confirmation-bottom">
-    <p>Hotovo, příručku máte ve schránce. Pošlete tuhle stránku někomu, kdo v Brně řeší bydlení.</p>
+    <!-- Když člověk odeslal nahoře, potvrzení už četl a tady by se opakovalo.
+         Skryje se, viz .is-druhotne v js/script.js. -->
+    <p data-role="hotovo">Hotovo, příručku máte ve schránce.</p>
+    <p>Pošlete tuhle stránku někomu, kdo v Brně řeší bydlení.</p>
     <div class="share-buttons" data-role="share-buttons">
       <button type="button" data-share="primary">Sdílet</button>
     </div>

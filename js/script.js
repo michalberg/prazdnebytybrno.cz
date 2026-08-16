@@ -84,9 +84,14 @@
     });
   }
 
-  function showConfirmedUI() {
+  function showConfirmedUI(odesilajici) {
     instances.forEach(function (instance) {
       instance.root.classList.add("is-confirmed");
+      // Potvrzení "Hotovo" patří k bloku, který člověk odeslal. V tom druhém
+      // by se jen opakovalo, tak z něj zmizí.
+      if (instance !== odesilajici) {
+        instance.root.classList.add("is-druhotne");
+      }
     });
   }
 
@@ -150,7 +155,7 @@
         if (!resp.ok) throw new Error("HTTP " + resp.status);
         formState.submitting = false;
         formState.submitted = true;
-        showConfirmedUI();
+        showConfirmedUI(odesilajici);
         ukazPotvrzeni(odesilajici);
         if (window.umami) {
           window.umami.track("lead_submitted", { source: variant });
