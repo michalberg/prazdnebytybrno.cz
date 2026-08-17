@@ -38,9 +38,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
 
@@ -229,6 +237,59 @@ html:not([class*="variant-"]) [data-form-top] {
 
 .quiz-buttons button:active {
   box-shadow: 0 1px 2px rgba(2, 40, 21, 0.2);
+  transform: translateY(1px);
+}
+
+/* Rozcestí po odhalení odpovědi: kdo chce příručku, nemusí prolézat celou
+   argumentaci. Hlavní volbou zůstává příručka, druhá je jen obtažená, aby
+   si obě navzájem nekonkurovaly. */
+.choice-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.btn-choice {
+  flex: 1 1 12rem;
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-label);
+  font-weight: 900;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.2;
+  padding: 0.7em 1.1em;
+  background: var(--color-accent);
+  color: var(--color-headline);
+  border: 2px solid var(--color-accent);
+  border-radius: 0.35rem;
+  box-shadow: 0 2px 5px rgba(2, 40, 21, 0.18);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease;
+}
+
+.btn-choice--secondary {
+  background: transparent;
+  border-color: var(--color-headline);
+  box-shadow: none;
+}
+
+.btn-choice:hover,
+.btn-choice:focus-visible {
+  background: var(--color-headline);
+  border-color: var(--color-headline);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-choice:active {
   transform: translateY(1px);
 }
 
