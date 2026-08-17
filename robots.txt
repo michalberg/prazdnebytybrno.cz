@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-
-# Příručka je odměna za e-mail, ať ji vyhledávače nenabízejí rovnou.
-Disallow: /prirucka-jak-v-brne-zadat-o-byt.pdf
