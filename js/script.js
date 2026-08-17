@@ -150,6 +150,9 @@
         source: variant,
         referrer: document.referrer,
       },
+      // Bez tohoto přepínače nemá Action Network povinnost autoresponse
+      // odeslat. Řídí se pak nastavením na záložce Responses dané akce.
+      triggers: { autoresponse: { enabled: true } },
     };
 
     fetch(CONFIG.anSubmissionUrl, {
