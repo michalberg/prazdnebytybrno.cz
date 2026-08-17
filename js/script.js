@@ -80,7 +80,7 @@
       instance.submitBtn.disabled = pending;
       instance.submitBtn.textContent = pending
         ? "Ukládám…"
-        : "Poslat mi přehled a návod";
+        : "Poslat mi příručku";
     });
   }
 
