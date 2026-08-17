@@ -144,7 +144,11 @@
     }
 
     var body = {
-      person: { email_addresses: [{ address: email }] },
+      person: {
+        // Na endpointu pro nepřihlášené odeslání je platný jedině stav
+        // "subscribed". Souhlas máme ze zaškrtávátka ve formuláři.
+        email_addresses: [{ address: email, status: "subscribed" }],
+      },
       add_tags: tags,
       "action_network:referrer_data": {
         source: variant,
