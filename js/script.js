@@ -10,7 +10,13 @@
   };
 
   var variant = (window.__pbb && window.__pbb.variant) || "default";
-  var emailRegex = /^[\w.-]+@([\w-]+\.)+[a-zA-Z]{2,}$/;
+  // Regulární výraz ze specifikace HTML pro input type="email", tedy stejný,
+  // jakým adresu posuzuje sám prohlížeč. Oproti jednodušší variantě propustí
+  // i adresy s plusem (opavak+klice@gmail.com), které jsou platné a lidé si
+  // jimi běžně třídí poštu. Vyžadujeme navíc tečku v doméně, ať se odchytí
+  // překlepy typu "jmeno@gmail".
+  var emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
   // ---------------------------------------------------------------------
   // Sdílený formulář — dvě umístění na stránce (nahoře/dole), jeden stav.
