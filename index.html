@@ -35,18 +35,26 @@
    všem (viz zadání sekce 6, "Pravidla výběru varianty"). */
 (function () {
   var ALLOWED = ["klic", "plakat", "mhd", "letak", "ig", "fb", "manychat", "share"];
+  // Další utm_source hodnoty, které mají spustit stejnou variantu obsahu
+  // jako klíčová z ALLOWED (typicky další odkaz/kanál pro tutéž kampaň).
+  var ALIASES = { klic1: "klic" };
   var value = "default";
+  var utmSource = "";
   try {
     var raw = new URLSearchParams(window.location.search).get("utm_source") || "";
     var normalized = raw.toLowerCase().trim();
-    if (ALLOWED.indexOf(normalized) !== -1) {
-      value = normalized;
+    utmSource = normalized;
+    var resolved = ALIASES[normalized] || normalized;
+    if (ALLOWED.indexOf(resolved) !== -1) {
+      value = resolved;
     }
   } catch (e) {
     /* poškozený query string apod. -> zůstává default */
   }
   document.documentElement.classList.add("variant-" + value);
-  window.__pbb = { variant: value };
+  // variant řídí obsah stránky (jen hodnoty z ALLOWED), utmSource jde beze
+  // změny do Action Network jako zdroj — i když do whitelistu nezapadá.
+  window.__pbb = { variant: value, utmSource: utmSource };
 })();
 </script>
 </head>

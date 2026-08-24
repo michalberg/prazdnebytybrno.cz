@@ -10,6 +10,7 @@
   };
 
   var variant = (window.__pbb && window.__pbb.variant) || "default";
+  var utmSource = (window.__pbb && window.__pbb.utmSource) || "";
   // Regulární výraz ze specifikace HTML pro input type="email", tedy stejný,
   // jakým adresu posuzuje sám prohlížeč. Oproti jednodušší variantě propustí
   // i adresy s plusem (opavak+klice@gmail.com), které jsou platné a lidé si
@@ -151,7 +152,10 @@
       },
       add_tags: tags,
       "action_network:referrer_data": {
-        source: variant,
+        // Do Action Network jde přímo utm_source z URL (i mimo whitelist
+        // variant), ne normalizovaná "variant" — ta slouží jen k výběru
+        // obsahu stránky.
+        source: utmSource || variant,
         referrer: document.referrer,
       },
       // Bez tohoto přepínače nemá Action Network povinnost autoresponse
