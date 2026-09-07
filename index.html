@@ -34,10 +34,10 @@
    se vykreslí <body>, jinak by na zlomek sekundy problikla výchozí varianta
    všem (viz zadání sekce 6, "Pravidla výběru varianty"). */
 (function () {
-  var ALLOWED = ["klic", "plakat", "mhd", "letak", "ig", "fb", "manychat", "share"];
+  var ALLOWED = ["klic", "plakat", "mhd", "ig", "fb", "manychat", "share"];
   // Další utm_source hodnoty, které mají spustit stejnou variantu obsahu
   // jako klíčová z ALLOWED (typicky další odkaz/kanál pro tutéž kampaň).
-  var ALIASES = { klic1: "klic" };
+  var ALIASES = { klic1: "klic", klic2: "klic", letak: "mhd" };
   var value = "default";
   var utmSource = "";
   try {
