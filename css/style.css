@@ -165,13 +165,22 @@ p {
 html.variant-default [data-variant-block~="default"],
 html.variant-ig [data-variant-block~="default"],
 html.variant-fb [data-variant-block~="default"],
-html.variant-manychat [data-variant-block~="default"],
 html.variant-share [data-variant-block~="default"],
 html.variant-mhd [data-variant-block~="default"],
 html.variant-letak [data-variant-block~="default"],
 html.variant-plakat [data-variant-block~="plakat"],
 html.variant-klic [data-variant-block~="klic"] {
   display: block;
+}
+
+/* ManyChat (odběratelé aktualizací): text před formulářem už znají, takže
+   dostanou jen formulář bez titulku a úvodu. Zbytek stránky pod ním zůstává. */
+html.variant-manychat .hero {
+  display: none;
+}
+
+html.variant-manychat [data-form-top] {
+  padding-top: 2.5rem;
 }
 
 /* Formulář nahoře jen u variant default-like a mhd/letak, ne u plakátu a klíče */

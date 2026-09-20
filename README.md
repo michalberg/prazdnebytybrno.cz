@@ -34,7 +34,8 @@ písmena a porovná s pevným seznamem. Neznámá nebo chybějící hodnota spad
 
 | `utm_source` | Hlava | Formulář |
 |---|---|---|
-| bez parametru, `ig`, `fb`, `manychat`, `share`, `mhd`, `letak` | výchozí | nahoře i dole |
+| bez parametru, `ig`, `fb`, `share`, `mhd`, `letak` | výchozí | nahoře i dole |
+| `manychat` | žádná (stránka začíná formulářem) | nahoře i dole |
 | `plakat` | otázka bez návodu | jen dole |
 | `klic` | kvíz s odhalením značky | jen dole |
 
